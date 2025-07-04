@@ -1,3 +1,15 @@
+❗ IMPORTANT
+The bot is currently NOT WORKING.
+It is presumed that Telegram has changed its API, making this functionality no longer possible.
+Support and development have been discontinued. Bug reports and update requests are not accepted.
+This repository is provided for educational purposes only.
+
+❗ ВАЖНО / IMPORTANT
+Бот в настоящее время НЕ РАБОТАЕТ.
+Предположительно, Telegram изменил своё API, что сделало невозможной работу данного функционала.
+Поддержка и разработка прекращены, баги и запросы на обновление не принимаются.
+Репозиторий предоставлен только в ознакомительных целях.
+
 > ⚠️ **Disclaimer (EN):**  
 > This bot can potentially be used for fraudulent or unethical purposes.  
 > I do **not host**, **administer**, or **control** this bot.  
