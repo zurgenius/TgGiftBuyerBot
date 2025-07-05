@@ -1,14 +1,47 @@
 ❗ IMPORTANT
 Due to recent changes, Telegram has started disabling the gift purchase functionality in bots when new gifts are released.
-As a result, the autobuy feature may no longer work correctly!
+As a result, the autobuy feature may no longer work correctly.
 Alternative: Use a userbot implementation with Telethon.
 ⚠️ This implementation is not provided in this repository.
 
+To use the /refund command:
+
+    Open the database (in the root of the repository).
+
+    Go to the users table and change your status from user to admin.
+
+    Go to the transactions table and copy the telegram_payment_charge_id of the transaction you want to refund.
+
+    Return to the bot and run the command:
+
+    /refund <telegram_payment_charge_id>
+
+⚠️ Warning: If the bot's balance has fewer stars than the transaction amount, the refund will fail.
+
+Alternative: Use the Telegram withdrawal bot. You must have at least 1000 stars available to withdraw.
+
 ❗ ВАЖНО
-С новыми обстоятельствами Telegram начал отключать возможность покупки подарков у ботов при выходе новых подарков.
-В связи с этим функция autobuy может работать некорректно!
+В связи с последними изменениями Telegram начал отключать возможность покупки подарков у ботов при выходе новых подарков.
+Из-за этого функция autobuy может работать некорректно.
 Альтернатива: использовать userbot на базе Telethon.
-⚠️ Данная реализация не представлена в этом репозитории.
+⚠️ Эта реализация не включена в данный репозиторий.
+
+Чтобы воспользоваться командой /refund:
+
+    Откройте базу данных (в корне репозитория).
+
+    В таблице users измените status вашего аккаунта с user на admin.
+
+    Перейдите в таблицу transactions и скопируйте telegram_payment_charge_id нужной транзакции.
+
+    Вернитесь в бота и выполните команду:
+
+    /refund <telegram_payment_charge_id>
+
+⚠️ Важно: если на балансе бота меньше звёзд, чем в указанной транзакции — рефанд не выполнится.
+
+Альтернатива: вывод средств через Telegram-бота. Требуется не менее 1000 звёзд на балансе для вывода.
+
 
 > ⚠️ **Disclaimer (EN):**  
 > This bot can potentially be used for fraudulent or unethical purposes.  
