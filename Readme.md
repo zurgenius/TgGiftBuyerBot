@@ -1,14 +1,14 @@
 ❗ IMPORTANT
-The bot is currently NOT WORKING.
-It is presumed that Telegram has changed its API, making this functionality no longer possible.
-Support and development have been discontinued. Bug reports and update requests are not accepted.
-This repository is provided for educational purposes only.
+Due to recent changes, Telegram has started disabling the gift purchase functionality in bots when new gifts are released.
+As a result, the autobuy feature may no longer work correctly!
+Alternative: Use a userbot implementation with Telethon.
+⚠️ This implementation is not provided in this repository.
 
-❗ ВАЖНО / IMPORTANT
-Бот в настоящее время НЕ РАБОТАЕТ.
-Предположительно, Telegram изменил своё API, что сделало невозможной работу данного функционала.
-Поддержка и разработка прекращены, баги и запросы на обновление не принимаются.
-Репозиторий предоставлен только в ознакомительных целях.
+❗ ВАЖНО
+С новыми обстоятельствами Telegram начал отключать возможность покупки подарков у ботов при выходе новых подарков.
+В связи с этим функция autobuy может работать некорректно!
+Альтернатива: использовать userbot на базе Telethon.
+⚠️ Данная реализация не представлена в этом репозитории.
 
 > ⚠️ **Disclaimer (EN):**  
 > This bot can potentially be used for fraudulent or unethical purposes.  
