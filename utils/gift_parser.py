@@ -143,7 +143,7 @@ async def start_gift_parsing_loop():
                         AutoBuySettings.status == "enabled"
                     ).all()
                     # Retrieve the list of newly added gifts for processing
-                    new_gifts = db.query(Gift).filter(Gift.is_new == 1).all()
+                    new_gifts = db.query(Gift).filter(Gift.is_new == True).all()
 
                     for settings in auto_buy_users:
                         user = db.query(User).filter(
@@ -168,7 +168,7 @@ async def start_gift_parsing_loop():
 
                     # Reset the 'is_new' flag after processing new gifts
                     for gift in new_gifts:
-                        gift.is_new = 0
+                        gift.is_new = False
                     db.commit()
 
                 await asyncio.sleep(3)
