@@ -27,7 +27,7 @@ class Transaction(Base):
     telegram_payment_charge_id = Column(
         String, nullable=False)
     payload = Column(String)
-    status = Column(Enum("completed", "refunded"),
+    status = Column(Enum("completed", "refunded", name='transaction_status'),
                     default="completed", nullable=False)
     time = Column(String)
 
@@ -41,7 +41,7 @@ class AutoBuySettings(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, nullable=False)
     status = Column(
-        Enum("enabled", "disabled"),
+        Enum("enabled", "disabled", name='auto_buy_status'),
         default="disabled",
         nullable=False
     )
