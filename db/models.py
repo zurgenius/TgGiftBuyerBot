@@ -9,7 +9,7 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer)
+    user_id = Column(String(50), nullable=False)
     username = Column(String(50), nullable=False)
     balance = Column(Integer, default=0)
     status = Column(String(20), default='user', nullable=False)
@@ -22,7 +22,7 @@ class Transaction(Base):
     __tablename__ = 'transactions'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False)
+    user_id = Column(String(50), nullable=False)
     amount = Column(Integer, nullable=False)
     telegram_payment_charge_id = Column(
         String, nullable=False)
@@ -39,7 +39,7 @@ class AutoBuySettings(Base):
     __tablename__ = "auto_buy_settings"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False)
+    user_id = Column(String(50), nullable=False)
     status = Column(
         Enum("enabled", "disabled", name='auto_buy_status'),
         default="disabled",
