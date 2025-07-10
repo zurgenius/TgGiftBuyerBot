@@ -45,9 +45,9 @@ async def auto_buy_command(message: types.Message, state: FSMContext, db_session
     Command handler for auto-purchase configuration.
     """
     with db_session as db:
-        settings = get_or_create_auto_buy_settings(db, message.from_user.id)
+        settings = get_or_create_auto_buy_settings(db, str(message.from_user.id))
         user = db.query(User).filter(
-            User.user_id == message.from_user.id).first()
+            User.user_id == str(message.from_user.id)).first()
 
         username = user.username if user else "Unknown User"
         balance = user.balance if user else 0
@@ -75,7 +75,7 @@ async def display_updated_settings(message: types.Message, db_session, settings:
     # Исправление DetachedInstanceError - получаем свежие данные пользователя в новой сессии
     with db_session as db:
         user = db.query(User).filter(
-            User.user_id == message.from_user.id).first()
+            User.user_id == str(message.from_user.id)).first()
         username = user.username if user else "Unknown User"
         balance = user.balance if user else 0
 
@@ -103,7 +103,7 @@ async def auto_buy_menu_handler(message: types.Message, state: FSMContext, db_se
     Handle user selection in auto-purchase menu.
     """
     with db_session as db:
-        settings = get_or_create_auto_buy_settings(db, message.from_user.id)
+        settings = get_or_create_auto_buy_settings(db, str(message.from_user.id))
 
         if message.text == "🔄 Toggle On/Off":
             settings.status = "enabled" if settings.status == "disabled" else "disabled"
@@ -154,7 +154,7 @@ async def auto_buy_set_price_handler(message: types.Message, state: FSMContext, 
     Handle price limit configuration.
     """
     with db_session as db:
-        settings = get_or_create_auto_buy_settings(db, message.from_user.id)
+        settings = get_or_create_auto_buy_settings(db, str(message.from_user.id))
 
         if message.text == "🔙 Back to Main Menu":
             await message.answer(
@@ -192,7 +192,7 @@ async def auto_buy_set_supply_handler(message: types.Message, state: FSMContext,
     Handle supply limit configuration.
     """
     with db_session as db:
-        settings = get_or_create_auto_buy_settings(db, message.from_user.id)
+        settings = get_or_create_auto_buy_settings(db, str(message.from_user.id))
 
         if message.text == "🔙 Back to Main Menu":
             await message.answer(
@@ -228,7 +228,7 @@ async def auto_buy_set_cycles_handler(message: types.Message, state: FSMContext,
     Handle purchase cycles configuration.
     """
     with db_session as db:
-        settings = get_or_create_auto_buy_settings(db, message.from_user.id)
+        settings = get_or_create_auto_buy_settings(db, str(message.from_user.id))
 
         if message.text == "🔙 Back to Main Menu":
             await message.answer(
